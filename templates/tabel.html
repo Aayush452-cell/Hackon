@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Table V05</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="{{url_for('static', filename='images1/icons/favicon.ico')}}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor1/bootstrap/css/bootstrap.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='fonts1/font-awesome-4.7.0/css/font-awesome.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor1/animate/animate.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor1/select/select2.min.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='vendor1/perfect-scrollbar/perfect-scrollbar.css')}}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css1/util.css')}}">
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css1/main.css')}}">
+
+	<link rel="shortcut icon" type="image/icon" href="{{url_for('static', filename='logo/favicon.png')}}"/>
+
+		<!--font-awesome.min.css-->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/font-awesome.min.css')}}" />
+
+		<!--animate.css-->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/animate.css')}}" />
+
+		<!--hover.css-->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/hover-min.css')}}">
+
+		<!--datepicker.css-->
+		<link rel="stylesheet"  href="{{url_for('static', filename='css/datepicker.css')}}" >
+
+		<script src="static/js/cities.js"></script>
+		<!--owl.carousel.css-->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/owl.carousel.min.css')}}">
+		<link rel="stylesheet" href="{{url_for('static', filename='css/owl.theme.default.min.css')}}"/>
+
+		<!-- range css-->
+        <link rel="stylesheet" href="{{url_for('static', filename='css/jquery-ui.min.css')}}" />
+
+		<!--bootstrap.min.css-->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/bootstrap.min.css')}}" />
+
+		<!-- bootsnav -->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/bootsnav.css')}}"/>
+
+		<!--style.css-->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}" />
+
+		<!--responsive.css-->
+		<link rel="stylesheet" href="{{url_for('static', filename='css/responsive.css')}}" />
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100 ver1">
+
+					<div class="">
+						<table>
+							<thead>
+								<tr class="row100 head">
+									<th class="cell100 column">Travel Agency</th>
+									<th class="cell100 column">website</th>
+									<th class="cell100 column">dest</th>
+									<th class="cell100 column">arr</th>
+									<th class="cell100 column">Book</th>
+
+								</tr>
+							</thead>
+							{% for book in booking %}
+							<tbody>
+								<tr class="row100 body">
+									<td class="cell100 column">{{book.name}}</td>
+									<td class="cell100 column">{{book.website}}</td>
+									<td class="cell100 column">{{book.destination}}</td>
+									<td class="cell100 column">{{book.arrival}}</td>
+									<td class="cell100 column"><button  class="about-view packages-btn" style="height:40px;width:40px paddingRight = 5px;"
+									onclick="document.location='/product/{{book.s_no}}'">
+											book now
+										</button></td>
+								</tr>
+							</tbody>
+							{% endfor %}
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--===============================================================================================-->	
+	<script src="vendor1/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/bootstrap/js/popper.js"></script>
+	<script src="vendor1/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="vendor1/perfect-scrollbar/perfect-scrollbar.min.js"></script>
+	<script>
+		$('.js-pscroll').each(function(){
+			var ps = new PerfectScrollbar(this);
+
+			$(window).on('resize', function(){
+				ps.update();
+			})
+
+			$(this).on('ps-x-reach-start', function(){
+				$(this).parent().find('.table100-firstcol').removeClass('shadow-table100-firstcol');
+			});
+
+			$(this).on('ps-scroll-x', function(){
+				$(this).parent().find('.table100-firstcol').addClass('shadow-table100-firstcol');
+			});
+
+		});
+
+		
+		
+		
+	</script>
+<!--===============================================================================================-->
+	<script src="js/main.js"></script>
+
+</body>
+</html>
