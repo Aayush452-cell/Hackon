@@ -6,14 +6,14 @@ from flask_googlemaps import get_coordinates
 #import googlemaps
 #from geopy import Nominatim
 
-#gmaps = googlemaps.Client(key='AIzaSyAZgnB19mcFTJPl7bbxcPHT0Nm2BkEEcBs')
+#gmaps = googlemaps.Client(key='')
 
 app = Flask(__name__)
 
-#API_KEY = 'AIzaSyAZgnB19mcFTJPl7bbxcPHT0Nm2BkEEcBs'
+#API_KEY = ''
 app.secret_key = 'super-secret-key'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:@localhost/new_project'
-#app.config['GOOGLEMAPS_KEY'] = "8JZ7i18MjFuM35dJHq70n3Hx4"
+#app.config['GOOGLEMAPS_KEY'] = ""
 db: SQLAlchemy = SQLAlchemy(app)
 
 local_server = True
@@ -23,7 +23,7 @@ app.config.update(
     MAIL_PORT='465',
     MAIL_USE_SSL=True,
     MAIL_USERNAME='aayushiiitcse1@gmail.com',
-    MAIL_PASSWORD='Aayush@000'
+    MAIL_PASSWORD=''
 )
 
 mail = Mail(app)
